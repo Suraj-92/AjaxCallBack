@@ -52,3 +52,8 @@ makePromiseCall("DELETE", deleteURL, false)
 
 const postURL = "http://localhost:3000/employee";
 const emplData = {"name": "test", "gender": "male", "departMent": [ "HR" ], "salary": "30000", "startDate": "1 Jan 2020", "notes": "", "id": 4, "profileUrl": "../assets/profile-images/Ellipse -3.png"};
+makePromiseCall("POST", postURL, true, emplData)
+    .then(responseText => {
+        console.log("User Added: " + responseText)
+    })
+    .catch(error => console.log("POST Error Status: " + JSON.stringify(error)));
